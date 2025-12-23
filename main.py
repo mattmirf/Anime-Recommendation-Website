@@ -17,3 +17,5 @@ df["year"] = df["year"].astype (int)
 df.drop(df[df["genres"] == "['Hentai']"].index, inplace=True) 
 
 df.to_csv("cleaned_animes.csv", index=False)
+
+print(df)
