@@ -6,6 +6,21 @@
     <title>Home</title>
 </head>
 <body>
-    <div><h1>Home Page</h1></div>
+
+    {% for a in anime %}
+        <div>
+            <h2>{{ a.title }}</h2>
+            <h4>{{ a.alternative_title }}</h4>
+
+            <p>
+                {{ a.type }}, {{ a.year }}, {{ a.episodes }} eps, Genres: {{ a.genres }}
+            </p>
+
+            <img src="{{ a.image_url }}" alt="{{ a.title }}">
+
+            <p>⭐ {{ a.score }}</p> 
+        </div>
+    {% endfor %}
+
 </body>
 </html>
