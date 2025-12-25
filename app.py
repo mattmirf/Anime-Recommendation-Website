@@ -18,6 +18,9 @@ def random_anime():
 
     return render_template('index.html', anime=random_df)
 
+@app.route("/anime")
+def anime():
+    return render_template('index1.html', anime=df)
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
