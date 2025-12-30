@@ -19,7 +19,11 @@ def anime():
     query = request.args.get("search","").lower()
     if query:
         anime_searched = df[df["title"].str.lower().str.contains(query, na=False)]
-        anime_list = anime_searched.to_dict(orient="records")
+        alt_anime = df[df["alternative_title"].str.lower().str.contains(query, na=False)]
+        alt_anime = alt_anime.to_dict(orient='records')
+        
+        anime_list = anime_searched.to_dict(orient='records')
+        anime_list.extend(alt_anime)
         # anime_list = clean_alternative_titles(anime_list)
     else:
         # anime_list = df.nlargest(21, "score")
