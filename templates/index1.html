@@ -118,16 +118,16 @@
 </head>
 <body>
     <h1>Browse Animes</h1>
-
     <a href="{{ url_for('random_anime') }}">
         <button>Random Animes</button>
     </a>
-
     <form class="search_bar" action="/home" method="get">
         <span class="search_icon">🔍</span>
         <input type="text" placeholder="Search Anime" name="search">
     </form>
-
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
     <div class="anime_grid">
         {% for a in anime %}
             <div class="anime_card">
