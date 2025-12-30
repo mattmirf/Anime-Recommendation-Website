@@ -122,7 +122,9 @@
         <span class="search_icon">🔍</span>
         <input type="text" placeholder="Search Anime" name="search">
     </form>
-
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
     <div class="anime_grid">
         {% for a in anime %}
             <div class="anime_card">
