@@ -4,7 +4,6 @@ import ast
 
 app = Flask(__name__)
 df = pd.read_csv("cleaned_animes.csv")
-genre_list = pd.read_csv("genres.csv")
 
 @app.route("/random-anime")
 def random_anime(): 
